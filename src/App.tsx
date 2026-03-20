@@ -1,14 +1,14 @@
 import { useEffect } from "react";
 import { toast, Toaster } from "sonner";
-import { Button } from "./components/ui/button";
-import AddFacultyDialog from "./pages/component/dialogs/add-faculty-dialog";
-import AddFacultyForm from "./pages/component/forms/add-faculty-form";
-import AddStudentDialog from "./pages/component/dialogs/add-student-dialog";
-import AddStudentForm from "./pages/component/forms/add-student-form";
-import AddSessionDialog from "./pages/component/dialogs/add-session-dialog";
-import AddSessionForm from "./pages/component/forms/add-session-form";
-import AddModuleDialog from "./pages/component/dialogs/add-module-dialog";
-import AddModuleForm from "./pages/component/forms/add-module-form";
+import { Button } from "@/components/ui/button";
+import AddFacultyDialog from "@/pages/component/dialogs/add-faculty-dialog";
+import AddFacultyForm from "@/pages/component/forms/add-faculty-form";
+import AddStudentDialog from "@/pages/component/dialogs/add-student-dialog";
+import AddStudentForm from "@/pages/component/forms/add-student-form";
+import AddSessionDialog from "@/pages/component/dialogs/add-session-dialog";
+import AddSessionForm from "@/pages/component/forms/add-session-form";
+import AddModuleDialog from "@/pages/component/dialogs/add-module-dialog";
+import AddModuleForm from "@/pages/component/forms/add-module-form";
 
 function App() {
 
