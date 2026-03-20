@@ -1,6 +1,6 @@
-import { Field, FieldGroup, FieldLabel } from "../ui/field";
-import { Input } from "../ui/input";
-import { Checkbox } from "../ui/checkbox";
+import { Field, FieldGroup, FieldLabel } from "../../../components/ui/field";
+import { Input } from "../../../components/ui/input";
+import { Checkbox } from "../../../components/ui/checkbox";
 import {
   Select,
   SelectContent,
@@ -8,14 +8,14 @@ import {
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "../ui/select";
-import { DialogClose, DialogFooter } from "../ui/dialog";
-import { Button } from "../ui/button";
+} from "../../../components/ui/select";
+import { DialogClose, DialogFooter } from "../../../components/ui/dialog";
+import { Button } from "../../../components/ui/button";
 import { useForm, Controller } from "react-hook-form";
-import { Spinner } from "../ui/spinner";
+import { Spinner } from "../../../components/ui/spinner";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { SessionSchema, type ISession } from "@/lib/zod";
-import { Textarea } from "../ui/textarea";
+import { Textarea } from "../../../components/ui/textarea";
 
 export default function AddSessionForm() {
   const {

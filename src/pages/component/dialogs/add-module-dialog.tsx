@@ -1,5 +1,5 @@
 import type { ReactNode } from "react"; 
-import { Button } from "../ui/button";
+import { Button } from "../../../components/ui/button";
 import {
   Dialog,
   DialogContent,
@@ -7,7 +7,7 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from "../ui/dialog";
+} from "../../../components/ui/dialog";
 
 export default function AddModuleDialog({ children }: { children: ReactNode}) {
   return (

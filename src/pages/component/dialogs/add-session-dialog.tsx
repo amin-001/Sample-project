@@ -1,5 +1,5 @@
 import type { ReactNode } from "react"; 
-import { Button } from "../ui/button";
+import { Button } from "../../../components/ui/button";
 import {
   Dialog,
   DialogContent,
@@ -7,23 +7,23 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from "../ui/dialog";
+} from "../../../components/ui/dialog";
 
-export default function AddFacultyDialog({ children }: { children: ReactNode}) {
+export default function AddSessionDialog({ children }: { children: ReactNode}) {
   return (
     <Dialog>
       {/* iusse */}
       <DialogTrigger asChild>
         <Button size={"xs"} variant="outline">
-          Add Faculty
+          Add Session
         </Button>
       </DialogTrigger>
       <DialogContent className="sm:max-w-sm">
         <DialogHeader>
-          <DialogTitle> Faculty Details </DialogTitle>
+          <DialogTitle> Session Details </DialogTitle>
           <DialogDescription>
             {" "}
-            Enter Faculty member Data for Storing in your DataBase{" "}
+            Enter Session Details For Students{" "}
           </DialogDescription>
         </DialogHeader>
 

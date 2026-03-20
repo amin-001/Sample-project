@@ -28,11 +28,8 @@ export const ModuleSchema = z.object({
     Description: z.string().min(2).max(50).optional(),
     Year: z.string(),
 });
-export const ToastSchema = z.object({
-    messge: z.string(),
-})
+
 export type IFaculty = z.infer<typeof FacultySchema>;
 export type IStudent = z.infer<typeof StudentSchema>;
 export type ISession = z.infer<typeof SessionSchema>;
 export type IModule = z.infer<typeof ModuleSchema>;
-export type IToast = z.infer<typeof ToastSchema>;
