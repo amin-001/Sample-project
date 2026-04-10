@@ -13,8 +13,8 @@ export const StudentSchema = z.object({
     email: z.string(),
     Batch: z.coerce.number().int().positive(),
     status: z.boolean().default(false),
-
 });
+
 export const SessionSchema = z.object({
     title: z.string().min(2).max(50),
     Description: z.string().min(2).max(50).optional(),
@@ -25,8 +25,8 @@ export const SessionSchema = z.object({
 });
 export const ModuleSchema = z.object({
     title: z.string().min(2).max(50),
-    Description: z.string().min(2).max(50).optional(),
-    Year: z.string(),
+    session_count: z.coerce.number().int().positive(),
+    faculty_count: z.coerce.number().int().positive(),
 });
 
 export type IFaculty = z.infer<typeof FacultySchema>;

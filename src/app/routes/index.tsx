@@ -4,6 +4,11 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import RootLayout from "@/layouts/root-layout";
 import HomePage from "@/pages/home";
 import StudentPage from "@/pages/students";
+import FacultyPage from "@/pages/faculty";
+import SessionPage from "@/pages/Session";
+import ModulePage from "@/pages/module";
+import AnalyziePage from "@/pages/analyzie";
+
 
 const routers = createBrowserRouter([
     {
@@ -18,6 +23,23 @@ const routers = createBrowserRouter([
                 path:"/students",
                 element:<StudentPage/>,
             },
+            {
+                path:"/faculty",
+                element:<FacultyPage/>,
+            },
+            {
+                path:"/module",
+                element:<ModulePage/>,
+            },
+            {
+                path:"/Session",
+                element:<SessionPage/>,
+            },
+            {
+                path:"/analyzie",
+                element:<AnalyziePage/>,
+            },
+
         ]
 
     }

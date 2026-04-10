@@ -1,82 +1,58 @@
 import { Field, FieldGroup, FieldLabel } from "../../../components/ui/field";
 import { Input } from "../../../components/ui/input";
-import {
-  Select,
-  SelectContent,
-  SelectGroup,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "../../../components/ui/select";
 import { DialogClose, DialogFooter } from "../../../components/ui/dialog";
 import { Button } from "../../../components/ui/button";
-import { useForm, Controller } from "react-hook-form";
+import { useForm } from "react-hook-form";
 import { Spinner } from "../../../components/ui/spinner";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { ModuleSchema,type IModule } from "@/lib/zod";
-import { Textarea } from "../../../components/ui/textarea";
+import { ModuleSchema, type IModule } from "@/lib/zod";
+import { useAppDispatch } from "@/app/hook";
+import { setData } from "@/features/modules/modulesSlice";
 
 export default function AddModuleForm() {
+  const dispatch = useAppDispatch();
   const {
     register,
     handleSubmit,
-    control,
     formState: { errors, isSubmitting },
-    // reset,
+    reset,
   } = useForm({
     resolver: zodResolver(ModuleSchema),
-        defaultValues:{
-            title: "",
-            Description: "",
-            Year:"",
-        },
-
   });
 
   const handleForm = (data: IModule) => {
-    console.log(data);
-
-    // reset()
+    setTimeout(() => {
+      console.log(data)
+    }, 20000);
+      dispatch(setData(data));
+      reset();
   };
+
+  console.log(isSubmitting)
+
   return (
     <form onSubmit={handleSubmit(handleForm)}>
       <FieldGroup>
         <div>
           <Field>
             <FieldLabel htmlFor="title">Title</FieldLabel>
-            <Input
-              id="title"
-              placeholder="title"
-              {...register("title")}
-            />
+            <Input id="title" placeholder="title" {...register("title")} />
             {errors.title && errors.title.message}
-          </Field>  
+          </Field>
         </div>
         <Field>
-            <FieldLabel htmlFor="description">Description</FieldLabel>
-            <Textarea className="resize-none rounded-md" id="description"  placeholder="Write Description" {...register("Description")}/>
+          <FieldLabel htmlFor="no_of_faculty">No of faculty</FieldLabel>
+          <Input id="no_of_faculty" {...register("faculty_count")} />
         </Field>
-        
+
         <Field className="pb-4">
-          <FieldLabel htmlFor="year">Module</FieldLabel>
-                    <Controller 
-                    control={control}
-                    name="Year"
-                    render={({field})=> (
-                        <Select  onValueChange={field.onChange} value={field.value}>
-            <SelectTrigger className="w-45">
-              <SelectValue  />
-            </SelectTrigger>
-            <SelectContent >
-              <SelectGroup>
-                <SelectItem value="Y1" >Y1</SelectItem>
-                <SelectItem value="Y2" >Y2</SelectItem>
-              </SelectGroup>
-            </SelectContent>
-          </Select>
-          
-                    )}/>
-          {errors.Year && errors.Year.message}
+          <FieldLabel htmlFor="no_of_modules">Module</FieldLabel>
+          <Input
+            id="no_of_modules"
+            placeholder="no. of modules"
+            {...register("session_count")}
+          />
+          {errors.session_count && errors.session_count.message}
         </Field>
       </FieldGroup>
       <DialogFooter>
@@ -91,7 +67,7 @@ export default function AddModuleForm() {
             Save
           </Button>
         ) : (
-          <Button type="submit">Save</Button>
+          <Button type="submit">Save </Button>
         )}
       </DialogFooter>
     </form>
